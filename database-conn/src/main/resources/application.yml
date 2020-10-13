@@ -1,0 +1,11 @@
+server:
+  port: 6002
+spring:
+  application:
+    name: database-conn
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

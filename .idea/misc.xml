@@ -8,7 +8,16 @@
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/dbinfo/pom.xml" />
+        <option value="$PROJECT_DIR$/database-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/database-conn/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/common-util/pom.xml" />
+        <option value="$PROJECT_DIR$/database-test/pom.xml" />
+        <option value="$PROJECT_DIR$/example-type/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">

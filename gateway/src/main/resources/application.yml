@@ -3,6 +3,22 @@ server:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: database_manager
+          uri: lb://DATABASE-MANAGER
+          predicates:
+            - Path=/api/databasemanager/**
+          filters:
+            - StripPrefix=1
+        - id: database_conn
+          uri: lb://DATABASE-CONN
+          predicates:
+            - Path=/api/databaseconn/**
+          filters:
+            - StripPrefix=1
+
 eureka:
   client:
     service-url:

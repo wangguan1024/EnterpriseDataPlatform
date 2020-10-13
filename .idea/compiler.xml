@@ -6,18 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zy-v-1.0" />
+        <module name="common-util" />
+        <module name="database-conn" />
+        <module name="database-test" />
+        <module name="database-manager" />
         <module name="eureka-server" />
         <module name="gateway" />
-        <module name="dbinfo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-util" target="11" />
+      <module name="database-test" target="1.5" />
+      <module name="example-type" target="11" />
+      <module name="my-util" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="dbinfo" options="-parameters" />
+      <module name="common-util" options="-parameters" />
+      <module name="database-conn" options="-parameters" />
+      <module name="database-manager" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="example-type" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="my-util" options="-parameters" />
     </option>
   </component>
 </project>
