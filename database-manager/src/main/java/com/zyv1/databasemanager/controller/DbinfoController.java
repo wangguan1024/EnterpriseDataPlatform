@@ -2,9 +2,7 @@ package com.zyv1.databasemanager.controller;
 
 
 import com.zyv1.databasemanager.entity.Dbinfo;
-import com.zyv1.databasemanager.feign.FeignDatabaseConn;
 import com.zyv1.databasemanager.service.DbinfoService;
-
 import com.zyv1.databasemanager.util.ReturnMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,15 +20,14 @@ public class DbinfoController {
         return dbinfoService.selectAll();
     }
 
-
     @PostMapping("/")
     public ReturnMessage<String> Insert(@RequestBody Dbinfo dbinfo){
         return dbinfoService.Insert(dbinfo);
     }
 
-    @DeleteMapping("/url/{url}")
-    public ReturnMessage<String> DeleteByUrl(@PathVariable("url") String url) {
-        return dbinfoService.DeleteByUrl(url);
+    @DeleteMapping("/dbname/{dbname}")
+    public ReturnMessage<String> DeleteByDbname(@PathVariable("dbname") String dbname) {
+        return dbinfoService.DeleteByDbname(dbname);
     }
 
     @PutMapping("/")
