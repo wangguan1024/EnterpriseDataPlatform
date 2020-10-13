@@ -16,8 +16,6 @@ spring:
           uri: lb://DATABASE-CONN
           predicates:
             - Path=/databaseconn/**
-#          filters:
-#            - StripPrefix=1
 
 eureka:
   client:
