@@ -58,7 +58,7 @@ public class DbinfoService {
         if(dbinfoDao.deleteByMap(Map.of("dbname", dbname))==1){
             returnMessage.success("");
         }else{
-            returnMessage.failed ("该dbname不存在");
+            returnMessage.failed ("该数据库不存在");
         }
         return returnMessage;
     }

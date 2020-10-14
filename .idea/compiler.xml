@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="database-conn" />
         <module name="common-util" />
+        <module name="model-manager" />
+        <module name="database-conn" />
         <module name="database-test" />
         <module name="database-manager" />
         <module name="eureka-server" />
@@ -29,6 +30,7 @@
       <module name="eureka-server" options="-parameters" />
       <module name="example-type" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="model-manager" options="-parameters" />
       <module name="my-util" options="-parameters" />
     </option>
   </component>
