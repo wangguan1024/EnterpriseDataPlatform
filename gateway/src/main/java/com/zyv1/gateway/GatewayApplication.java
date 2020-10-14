@@ -16,28 +16,4 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 
-
-	@Bean
-	public CorsFilter corsFilter() {
-		//1.添加CORS配置信息
-		CorsConfiguration config = new CorsConfiguration();
-		//放行所有域
-		config.addAllowedOrigin("*");
-		//是否发送Cookie信息
-		config.setAllowCredentials(true);
-		//放行所有请求方式
-		config.addAllowedMethod("*");
-		//放行所有头部信息
-		config.addAllowedHeader("*");
-		//暴露所有头部信息（因为跨域访问默认不能获取全部头部信息）
-		config.addExposedHeader("*");
-
-		//2.添加映射路径
-		UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
-		configSource.registerCorsConfiguration("/**", config);
-
-		//3.返回新的CorsFilter.
-		return new CorsFilter(configSource);
-	}
-
 }
