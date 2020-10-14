@@ -31,14 +31,18 @@ public class DbinfoService {
     public ReturnMessage<String> Insert(Dbinfo dbinfo){
         ReturnMessage<String> returnMessage = new ReturnMessage<>();
 
-        if(judgeRepeat("url", dbinfo.getUrl())){
-            returnMessage.failed ("数据库Url已存在");
-            return returnMessage;
-        }
         if(judgeRepeat("dbname",dbinfo.getDbname())){
             returnMessage.failed  ("数据库名称重复");
             return returnMessage;
         }
+
+        String url = processUrl(dbinfo.getDbtype(), dbinfo.getIp(),dbinfo.getPort(),dbinfo.getConnName());
+        dbinfo.setUrl(url);
+        if(judgeRepeat("url", dbinfo.getUrl())){
+            returnMessage.failed ("数据库已存在");
+            return returnMessage;
+        }
+
 
         if (dbinfoDao.insert(dbinfo)>0){
             returnMessage.success("");
@@ -80,5 +84,15 @@ public class DbinfoService {
     //根据指定字段判断是否已经存在同名数据
     private boolean judgeRepeat(String fieldName, String fieldValue){
         return dbinfoDao.selectCount(new QueryWrapper<Dbinfo>().eq(fieldName, fieldValue)) > 0;
+    }
+
+    private String processUrl(String dbtype, String ip, String port, String connName){
+        if(dbtype.equals("mysql")){
+            return "jdbc:mysql://"+ip+":"+port+"/"+connName;
+        }
+        if(dbtype.equals("oracle")){
+            return "jdbc:oracle:thin:@"+ip+":"+port+":"+connName;
+        }
+        return "";
     }
 }

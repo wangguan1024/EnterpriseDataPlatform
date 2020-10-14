@@ -10,4 +10,8 @@ public class Dbinfo {
     private String username;
     private String password;
     private String dbname;
+    private String ip;
+    private String port;
+    private String connName;
+    private String dbtype;
 }
