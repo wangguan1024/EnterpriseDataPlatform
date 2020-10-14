@@ -17,6 +17,7 @@ public class DbinfoService {
     private DbinfoDao dbinfoDao;
 
 
+
     public ReturnMessage<List<Dbinfo>> selectAll(){
         ReturnMessage<List<Dbinfo>> returnMessage = new ReturnMessage<>();
         List<Dbinfo> dbinfoList = dbinfoDao.selectList(null);
@@ -42,7 +43,6 @@ public class DbinfoService {
             returnMessage.failed ("数据库已存在");
             return returnMessage;
         }
-
 
         if (dbinfoDao.insert(dbinfo)>0){
             returnMessage.success("");
