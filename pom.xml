@@ -15,7 +15,6 @@
         <module>gateway</module>
         <module>database-conn</module>
         <module>database-manager</module>
-        <module>common-util</module>
     </modules>
 
 
