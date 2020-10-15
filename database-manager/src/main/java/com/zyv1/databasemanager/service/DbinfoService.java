@@ -38,17 +38,17 @@ public class DbinfoService {
 
         String url = processUrl(dbinfo.getDbtype(), dbinfo.getHost(),dbinfo.getPort(),dbinfo.getConnName());
 
-        try (Connection conn = DriverManager.getConnection(url, dbinfo.getUsername(), dbinfo.getPassword())){
-            returnMessage.success("");
-        }catch (SQLException e){
-            returnMessage.failed("数据库连接失败, 请检查数据是否正确");
-            return returnMessage;
-        }
-
         dbinfo.setUrl(url);
 
         if(judgeRepeat("url", dbinfo.getUrl())){
             returnMessage.failed ("数据库已存在");
+            return returnMessage;
+        }
+
+        try (Connection conn = DriverManager.getConnection(url, dbinfo.getUsername(), dbinfo.getPassword())){
+            returnMessage.success("");
+        }catch (SQLException e){
+            returnMessage.failed("新数据库连接失败, 请检查输入数据是否正确");
             return returnMessage;
         }
 
