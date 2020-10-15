@@ -1,5 +1,5 @@
 server:
-  port: 6007
+  port: 6004
 spring:
   application:
     name: mail-server

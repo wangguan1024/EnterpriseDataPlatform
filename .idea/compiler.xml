@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="common-util" />
         <module name="warn-server" />
         <module name="model-manager" />
@@ -20,6 +21,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common-util" target="11" />
+      <module name="config-server" target="11" />
       <module name="database-test" target="1.5" />
       <module name="example-type" target="11" />
       <module name="my-util" target="11" />
@@ -28,6 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-util" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="database-conn" options="-parameters" />
       <module name="database-manager" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
