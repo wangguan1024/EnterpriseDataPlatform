@@ -23,5 +23,4 @@ public class WarnInfo {
     private Integer itemNum = 0;
     private Double warnLine;
     private Boolean isBigger = true;
-    private Double lastValue = 0.;
 }
