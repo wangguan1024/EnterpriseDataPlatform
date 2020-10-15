@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient("DATABASE-CONN")
 public interface FeignDatabaseConn {
-    @PostMapping("api/predict")
+    @PostMapping("/api/predict")
     public ReturnMessage<JSONArray> getDataForPredict(@RequestBody ModelRelData modelRelData);
 }
