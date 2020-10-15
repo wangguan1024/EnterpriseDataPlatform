@@ -8,6 +8,9 @@ import com.zyv1.databasemanager.util.ReturnMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +37,16 @@ public class DbinfoService {
         }
 
         String url = processUrl(dbinfo.getDbtype(), dbinfo.getHost(),dbinfo.getPort(),dbinfo.getConnName());
+
+        try (Connection conn = DriverManager.getConnection(url, dbinfo.getUsername(), dbinfo.getPassword())){
+            returnMessage.success("");
+        }catch (SQLException e){
+            returnMessage.failed("数据库连接失败, 请检查数据是否正确");
+            return returnMessage;
+        }
+
         dbinfo.setUrl(url);
+
         if(judgeRepeat("url", dbinfo.getUrl())){
             returnMessage.failed ("数据库已存在");
             return returnMessage;
