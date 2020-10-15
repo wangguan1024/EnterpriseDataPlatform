@@ -1,5 +1,5 @@
 server:
-  port: 6004
+  port: 6005
 spring:
   application:
     name: warn-server
@@ -7,9 +7,14 @@ spring:
     url: jdbc:mysql://localhost:3306/zyv1
     username: root
     password: 200034
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: 200034
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+

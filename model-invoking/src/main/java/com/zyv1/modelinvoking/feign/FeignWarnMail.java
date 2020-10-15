@@ -1,7 +1,7 @@
-package com.zyv1.warnserver.feign;
+package com.zyv1.modelinvoking.feign;
 
 
-import com.zyv1.warnserver.util.ReturnMessage;
+import com.zyv1.modelinvoking.util.ReturnMessage;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

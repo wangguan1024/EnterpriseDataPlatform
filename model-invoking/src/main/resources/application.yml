@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: model-invoking
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: 200034
 eureka:
   client:
     service-url:
