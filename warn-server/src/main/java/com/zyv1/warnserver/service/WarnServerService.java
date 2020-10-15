@@ -53,6 +53,7 @@ public class WarnServerService {
             }
 
             Double predictResult = predictReturnMessage.getData();
+            if(predictResult<0.) {predictResult = 0.;}
             Double warnLine = warnInfo.getWarnLine();
             Boolean isBigger = warnInfo.getIsBigger();
 
