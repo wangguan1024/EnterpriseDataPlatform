@@ -17,14 +17,6 @@ public class ApiController {
 
     @GetMapping("/dbname/{dbname}")
     public ReturnMessage<Dbinfo> selectByDbname(@PathVariable("dbname") String dbname){
-        //测试熔断机制
-//        try{
-//            Thread.sleep(30000);
-//
-//        }catch (Exception e){
-//            System.out.println(e);
-//        }
-//        throw new RuntimeException("");
         return apiService.selectByDbname(dbname);
     }
 }
