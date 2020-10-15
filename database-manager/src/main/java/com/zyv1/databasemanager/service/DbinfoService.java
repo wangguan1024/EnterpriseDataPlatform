@@ -18,14 +18,10 @@ public class DbinfoService {
 
 
 
-    public ReturnMessage<List<Dbinfo>> selectAll(){
+    public ReturnMessage<List<Dbinfo>>selectAll(){
         ReturnMessage<List<Dbinfo>> returnMessage = new ReturnMessage<>();
         List<Dbinfo> dbinfoList = dbinfoDao.selectList(null);
-        if(dbinfoList.isEmpty()){
-            returnMessage.failed("暂无数据库信息，请添加至少一个");
-        }else{
-            returnMessage.success(dbinfoList);
-        }
+        returnMessage.success(dbinfoList);
         return returnMessage;
     }
 

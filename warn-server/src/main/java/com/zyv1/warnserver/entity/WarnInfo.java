@@ -1,9 +1,12 @@
 package com.zyv1.warnserver.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 @Data
 public class WarnInfo {
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     //关联模型信息

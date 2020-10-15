@@ -23,11 +23,9 @@ public class ModelManagerService {
     public ReturnMessage<List<ModelInfo>> selectAll() {
         ReturnMessage<List<ModelInfo>> returnMessage = new ReturnMessage<>();
         List<ModelInfo> modelInfoList = modelManagerDao.selectList(null);
-        if (modelInfoList.isEmpty()) {
-            returnMessage.failed("暂无算法模型信息，请添加至少一个");
-        } else {
-            returnMessage.success(modelInfoList);
-        }
+
+        returnMessage.success(modelInfoList);
+
         return returnMessage;
     }
 

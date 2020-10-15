@@ -20,10 +20,6 @@ public class WarnInfoService {
         ReturnMessage<List<WarnInfo>> returnMessage = new ReturnMessage<>();
 
         List<WarnInfo> list = warnInfoDao.selectList(null);
-        if(list.isEmpty()){
-            returnMessage.failed("预警系统无任务");
-            return  returnMessage;
-        }
         returnMessage.success(list);
         return returnMessage;
     }
