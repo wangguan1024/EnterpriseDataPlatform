@@ -47,10 +47,7 @@ public class ModelManagerService {
             return returnMessage;
         }
 
-        if (modelManagerDao.selectCount(
-                new QueryWrapper<ModelInfo>()
-                        .allEq(Map.of("train_url", modelInfo.getTrainUrl(), "predict_url", modelInfo.getPredictUrl())
-                        )) > 0) {
+        if (modelManagerDao.selectCount(new QueryWrapper<ModelInfo>().eq("predict_url", modelInfo.getPredictUrl())) > 0) {
             returnMessage.failed("该模型已被导入");
             return returnMessage;
         }

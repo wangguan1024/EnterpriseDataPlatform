@@ -10,6 +10,5 @@ public class ModelInfo {
     private Integer id;
     private String modelName;
     private String modelLanguage;
-    private String trainUrl;
     private String predictUrl;
 }
