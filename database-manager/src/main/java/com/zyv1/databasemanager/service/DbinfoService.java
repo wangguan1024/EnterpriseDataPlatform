@@ -37,7 +37,7 @@ public class DbinfoService {
             return returnMessage;
         }
 
-        String url = processUrl(dbinfo.getDbtype(), dbinfo.getIp(),dbinfo.getPort(),dbinfo.getConnName());
+        String url = processUrl(dbinfo.getDbtype(), dbinfo.getHost(),dbinfo.getPort(),dbinfo.getConnName());
         dbinfo.setUrl(url);
         if(judgeRepeat("url", dbinfo.getUrl())){
             returnMessage.failed ("数据库已存在");
@@ -86,12 +86,12 @@ public class DbinfoService {
         return dbinfoDao.selectCount(new QueryWrapper<Dbinfo>().eq(fieldName, fieldValue)) > 0;
     }
 
-    private String processUrl(String dbtype, String ip, String port, String connName){
+    private String processUrl(String dbtype, String host, String port, String connName){
         if(dbtype.equals("mysql")){
-            return "jdbc:mysql://"+ip+":"+port+"/"+connName;
+            return "jdbc:mysql://"+host+":"+port+"/"+connName;
         }
         if(dbtype.equals("oracle")){
-            return "jdbc:oracle:thin:@"+ip+":"+port+":"+connName;
+            return "jdbc:oracle:thin:@"+host+":"+port+":"+connName;
         }
         return "";
     }

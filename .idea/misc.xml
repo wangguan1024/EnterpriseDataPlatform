@@ -11,6 +11,9 @@
         <option value="$PROJECT_DIR$/database-manager/pom.xml" />
         <option value="$PROJECT_DIR$/database-conn/pom.xml" />
         <option value="$PROJECT_DIR$/model-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/model-use/pom.xml" />
+        <option value="$PROJECT_DIR$/model-invoking/pom.xml" />
+        <option value="$PROJECT_DIR$/warn-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

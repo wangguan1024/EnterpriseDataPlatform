@@ -1,4 +1,4 @@
-package com.zyv1.databasemanager.service;
+package com.zyv1.databasemanager.api;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zyv1.databasemanager.dao.DbinfoDao;

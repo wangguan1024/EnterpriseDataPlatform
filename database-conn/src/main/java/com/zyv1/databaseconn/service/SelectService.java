@@ -19,12 +19,12 @@ import java.util.List;
 public class SelectService {
 
     @Autowired
-    private FeignDatabaseManager feignDatabaseManager;
+    private FeignDatabaseManager feignDatabaseManager; //引入feign根据dbname获取数据库账号密码等信息
 
     public ReturnMessage<String> GetTableNames(String dbname)  {
         ReturnMessage<String> returnMessage = new ReturnMessage<>();
 
-        //从databasemanager微服务获取数据库信息
+
         ReturnMessage<Dbinfo> feignMessage = feignDatabaseManager.selectByDbname(dbname);
         if(feignMessage.getStatus().equals("failed")){
             returnMessage.failed(feignMessage.getReason());

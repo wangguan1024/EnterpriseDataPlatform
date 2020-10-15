@@ -7,10 +7,13 @@ import org.springframework.stereotype.Service;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CheckService {
     public ReturnMessage<String> testconn(Dbinfo dbinfo){
+
         ReturnMessage<String> returnMessage = new ReturnMessage<>();
         try (Connection conn = DriverManager.getConnection(dbinfo.getUrl(), dbinfo.getUsername(), dbinfo.getPassword())){
             returnMessage.success("");

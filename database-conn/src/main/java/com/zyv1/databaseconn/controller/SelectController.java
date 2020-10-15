@@ -20,6 +20,8 @@ public class SelectController {
        return selectService.GetTableNames(dbname);
     }
 
+    //要增加查询字段名
+
     @GetMapping("/data/dbname/{dbname}/tablename/{tablename}")
     public ReturnMessage<JSONArray> selectAllByTableName(
 

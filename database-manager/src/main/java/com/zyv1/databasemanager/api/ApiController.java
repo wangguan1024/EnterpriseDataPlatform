@@ -1,8 +1,7 @@
-package com.zyv1.databasemanager.controller;
+package com.zyv1.databasemanager.api;
 
 
 import com.zyv1.databasemanager.entity.Dbinfo;
-import com.zyv1.databasemanager.service.ApiService;
 import com.zyv1.databasemanager.util.ReturnMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

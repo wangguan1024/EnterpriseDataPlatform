@@ -40,6 +40,11 @@ spring:
           predicates:
             - Path=/databaseconn/**
 
+        - id: model-manager
+          uri: lb://MODEL-MANAGER
+          predicates:
+            - Path=/modelmanager/**
+
 eureka:
   client:
     service-url:
