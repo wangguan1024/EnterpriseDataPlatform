@@ -45,6 +45,25 @@ spring:
           predicates:
             - Path=/modelmanager/**
 
+        - id: mail-server
+          uri: lb://MAIL-SERVER
+          predicates:
+            - Path=/mailserver/**
+
+        - id: warn-server
+          uri: lb://WARN-SERVER
+          predicates:
+            - Path=/warnserver/**
+
+        - id: warn-data
+          uri: lb://WARN-SERVER
+          predicates:
+            - Path=/warndata/**
+
+
+
+
+
 eureka:
   client:
     service-url:

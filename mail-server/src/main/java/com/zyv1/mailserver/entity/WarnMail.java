@@ -18,4 +18,6 @@ public class WarnMail {
     private Date time;
 
     private String message;
+
+    private Boolean isDeleted;
 }
